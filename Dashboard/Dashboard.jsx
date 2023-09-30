@@ -12,7 +12,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const Dashboard = () => {
   
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
-  
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentDateTime(new Date());
@@ -44,7 +44,17 @@ const Dashboard = () => {
     ],
   };
 
-  const options = { responsive: true, maintainAspectRatio: false };
+  const options = { responsive: true, maintainAspectRatio: false,  cutout: 120, 
+ };
+
+
+
+  
+
+
+
+
+
 
   const textCenter = {
     id: "textCenter",
@@ -111,7 +121,7 @@ const Dashboard = () => {
       <div>
         <h1 className="p-3">Appointment status</h1>
 
-        <div className="w-80 h-80 ">
+        <div className="w-80 h-80  ">
           <Doughnut data={data} options={options} plugins={[textCenter]} />
         </div>
       </div>
